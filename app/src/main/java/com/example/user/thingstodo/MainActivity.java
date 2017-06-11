@@ -1,6 +1,7 @@
 package com.example.user.thingstodo;
 
 import android.content.Intent;
+import android.media.Image;
 import android.os.Bundle;
 import android.support.design.widget.FloatingActionButton;
 import android.support.design.widget.Snackbar;
@@ -15,7 +16,10 @@ import android.widget.TextView;
 public class MainActivity extends AppCompatActivity implements View.OnClickListener {
     FloatingActionButton add;
     Toolbar toolbar;
+    TextView first;
 
+    ImageView ifempty;
+    TextView ifempty2;
 
 
 
@@ -26,8 +30,20 @@ public class MainActivity extends AppCompatActivity implements View.OnClickListe
         toolbar = (Toolbar) findViewById(R.id.toolbar);
         add = (FloatingActionButton) findViewById(R.id.add);
         setSupportActionBar(toolbar);
+        first = (TextView)findViewById(R.id.first);
+        ifempty = (ImageView)findViewById(R.id.ifempty);
+        ifempty2 = (TextView)findViewById(R.id.ifempty2);
 
         add.setOnClickListener(this);
+        Intent save = getIntent();
+        String todo = save.getStringExtra("todo");
+        int count=save.getIntExtra("1",0);
+        first.setText(todo);
+        if(count==1){
+            ifempty.setVisibility(View.INVISIBLE);
+            ifempty2.setVisibility(View.INVISIBLE);
+        }
+
 
 
     }
@@ -48,11 +64,13 @@ public class MainActivity extends AppCompatActivity implements View.OnClickListe
 
     @Override
     public void onClick(View v) {
-        Intent addthings = new Intent(this,addthings.class);
+        Intent addtodo = new Intent(this,addtodo.class);
         switch (v.getId()){
             case R.id.add :
 
-                startActivity(addthings);
+
+                startActivity(addtodo);
+                finish();
 
                 break;
 

@@ -31,10 +31,12 @@
 
                 />
             <EditText
+                android:id="@+id/edittext"
                 android:layout_width="match_parent"
                 android:layout_height="40dp"
                 android:layout_marginLeft="30dp"
                 android:layout_marginRight="30dp"
+                android:textColor="#ffffff"
                 />
 
 
@@ -130,6 +132,7 @@
 
             </LinearLayout>
             <TextView
+                android:id="@+id/testview"
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"
                 android:text="Alarm will ring on 11 Jun, 2017, 12:00PM"
