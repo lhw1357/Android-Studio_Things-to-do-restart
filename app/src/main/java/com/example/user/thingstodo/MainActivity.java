@@ -33,6 +33,7 @@ public class MainActivity extends AppCompatActivity implements View.OnClickListe
         first = (TextView)findViewById(R.id.first);
         ifempty = (ImageView)findViewById(R.id.ifempty);
         ifempty2 = (TextView)findViewById(R.id.ifempty2);
+        first.setVisibility(View.INVISIBLE);
 
         add.setOnClickListener(this);
         Intent save = getIntent();
@@ -42,6 +43,7 @@ public class MainActivity extends AppCompatActivity implements View.OnClickListe
         if(count==1){
             ifempty.setVisibility(View.INVISIBLE);
             ifempty2.setVisibility(View.INVISIBLE);
+            first.setVisibility(View.VISIBLE);
         }
 
 
